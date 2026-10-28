@@ -87,8 +87,7 @@ function useRestaurant() {
       return items.length > 0 ? [...others, { ...order, items }] : others;
     });
 
-  const pay = (orderId: string) =>
-    setOrders(prev => prev.map(o => (o.id === orderId ? { ...o, status: PAID } : o)));
+  const pay = (orderId: string) => setOrders(prev => prev.map(o => (o.id === orderId ? { ...o, status: PAID } : o)));
 
   return { dishes, orders, ready, saveDish, toggleDish, deleteDish, isServing, servingOrder, changeQty, pay };
 }
